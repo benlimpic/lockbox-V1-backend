@@ -5,7 +5,7 @@ class Api::V1::ProjectsController < ApplicationController
 
   # GET /projects
   def index
-      @projects = Project.where
+      @projects = Project.where(user_id: @current_user.id)
     render json: @projects
   end
 
